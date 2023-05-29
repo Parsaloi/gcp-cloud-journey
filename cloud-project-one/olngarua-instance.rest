@@ -1,0 +1,85 @@
+POST https://www.googleapis.com/compute/v1/projects/ubuntu-dolibarr-client/zones/us-east1-b/instances
+{
+  "canIpForward": false,
+  "confidentialInstanceConfig": {
+    "enableConfidentialCompute": false
+  },
+  "deletionProtection": false,
+  "description": "",
+  "disks": [
+    {
+      "autoDelete": true,
+      "boot": true,
+      "deviceName": "oas-dolibarr",
+      "initializeParams": {
+        "diskSizeGb": "10",
+        "diskType": "projects/ubuntu-dolibarr-client/zones/us-central1-a/diskTypes/pd-balanced",
+        "labels": {},
+        "sourceImage": "projects/debian-cloud/global/images/debian-11-bullseye-v20230509"
+      },
+      "mode": "READ_WRITE",
+      "type": "PERSISTENT"
+    }
+  ],
+  "displayDevice": {
+    "enableDisplay": true
+  },
+  "guestAccelerators": [],
+  "keyRevocationActionType": "NONE",
+  "labels": {
+    "goog-ec-src": "vm_add-rest"
+  },
+  "machineType": "projects/ubuntu-dolibarr-client/zones/us-east1-b/machineTypes/e2-standard-2",
+  "metadata": {
+    "items": []
+  },
+  "name": "oas-dolibarr",
+  "networkInterfaces": [
+    {
+      "accessConfigs": [
+        {
+          "name": "External NAT",
+          "networkTier": "PREMIUM"
+        }
+      ],
+      "stackType": "IPV4_ONLY",
+      "subnetwork": "projects/ubuntu-dolibarr-client/regions/us-east1/subnetworks/default"
+    }
+  ],
+  "params": {
+    "resourceManagerTags": {}
+  },
+  "reservationAffinity": {
+    "consumeReservationType": "ANY_RESERVATION"
+  },
+  "scheduling": {
+    "automaticRestart": true,
+    "onHostMaintenance": "MIGRATE",
+    "provisioningModel": "STANDARD"
+  },
+  "serviceAccounts": [
+    {
+      "email": "12277155900-compute@developer.gserviceaccount.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/devstorage.read_only",
+        "https://www.googleapis.com/auth/logging.write",
+        "https://www.googleapis.com/auth/monitoring.write",
+        "https://www.googleapis.com/auth/servicecontrol",
+        "https://www.googleapis.com/auth/service.management.readonly",
+        "https://www.googleapis.com/auth/trace.append"
+      ]
+    }
+  ],
+  "shieldedInstanceConfig": {
+    "enableIntegrityMonitoring": true,
+    "enableSecureBoot": false,
+    "enableVtpm": true
+  },
+  "tags": {
+    "items": [
+      "http-server",
+      "https-server"
+    ]
+  },
+  "zone": "projects/ubuntu-dolibarr-client/zones/us-east1-b"
+}
