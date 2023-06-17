@@ -13,7 +13,7 @@ The GKE cluster (Google's Kubernetes PaaS) is comprised of one zonal cluster tha
 
 ## Developer experience
 
-This Cloud-native enviroment will enable Paperless developers to focus on writing code that is important to theri solution which is creating highly available teacher assistant  
+This Cloud-native enviroment will enable Paperless developers to focus on writing code that is important to their solution which is creating highly available teacher assistant  
 tools that will increse the productivity of a teacher whose main job is to nurture her students.  
 
 This development platform on Google Cloud will also enable the Paperless developers to leverage Google APIs in application development which will accelerate the continous integration  
