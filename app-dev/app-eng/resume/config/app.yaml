@@ -1,0 +1,7 @@
+runtime: python311
+service: resume-server
+
+handlers:
+  - url: /favicon\.ico
+    static_files: favicon.ico
+    upload: favicon\.ico
