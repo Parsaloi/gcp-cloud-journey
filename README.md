@@ -5,9 +5,9 @@ This is a mini-projects series demonstrating my GCP Cloud Architect journey
 
 ## Introduction
 
-Navigating the landscape of Cloud Computing and Cloud-native Architectures is a continous exciting journey and Cloud Platforms such as the Google Cloud Platform has been a ***great co-pilot***.  
+Navigating the landscape of Cloud Computing and Cloud-native Architectures is a continous exciting journey and Cloud Platforms such as the Google Cloud Platform have been a ***great co-pilot***.  
 Learning Kuberenets concepts from the Kubernetes docs <https://kubernetes.io/> has been a beautiful experince thus far. I am a proud member of the online K8s open-source community where we share and learn  
-coo stuff.
+cool stuff.
 
 > Brendan Burns(2022) inspired me with his words "...we dig into how central collaboration is to this innovation..." on his *2022* LinkedIn post:  
 > > <https://www.linkedin.com/pulse/community-drives-innovation-kubernetes-brendan-burns/>  
