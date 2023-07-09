@@ -1,0 +1,38 @@
+apiVersion: app/v1
+kind: StatefulSet
+metadata:
+  name: statefulset-ubuntu
+  spec:
+    selector:
+      matchLables:
+        app: ubuntu
+      serviceName: "ubuntu"
+      replicas: 3
+      updateStrategy:
+        type: RollingUpdate
+      template:
+        metadata:
+          lables:
+            app: ubuntu
+    spec:
+      containers:
+      - name: ubuntu
+        image: ubuntu:latest
+        ports:
+        - containerPorts: 80
+          name: http
+        volumeMounts:
+        - name: data
+          mountPath: ...
+   volumeClaimTemplates:
+   - metadata:
+     name: data
+     annotations:
+       pv.beta.kubernetes.io/storage-class: "default"
+     spec:
+       accessModes: [ "ReadWriteOnce" ]
+       resources:
+         requests:
+           storage: 1Gi
+     
+
