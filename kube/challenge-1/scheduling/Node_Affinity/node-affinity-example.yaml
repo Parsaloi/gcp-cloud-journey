@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoreDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+              - key: key
+                operator: In
+                values:
+                  - value
