@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  tolerations:
+    - key: "key"
+      value: "value"
+      effect:
+        "taint-effect"
