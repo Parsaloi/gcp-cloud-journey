@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-hello
+spec:
+  containers:
+    - name: hello
+      image: docker.io/library/hello-world:latest
+      volumeMounts:
+        - name: hello-store
+          mountPath: /data/hello-store
+      volumes:
+        -name: hello-store
+        emptyDir: {}
