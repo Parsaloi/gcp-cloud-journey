@@ -42,3 +42,13 @@ You decide that under normal operation you'd prefer to have a similar number of 
 cluster to **self-heal** in the case that there is a problem.
 
 Pod topology spread contraints offer you a declarative way to configure that.
+
+#### Spread constraint definition
+
+You can define one or multiple `topologySpreadConstraints` entries to instruct the kube-scheduler how to place each incoming Pod in relation to the  
+existing Pods across your cluster. Those fields are:  
+- `maxSkew` describes the degree to which Pods may be unevenly distributed. You must specify this field and the number must be greater than zero.  
+Its semantics differ according to the value of `whenUnsatisfiable`:    
+- if you select `whenUnsatisfiable: DoNotSchedule`, then the `maxSkew` defines the maximum permitted difference between the number of matching pods    
+and the *global mininmum* (the minimum number of matching pods in an eligible domain or zero if the number of eligible domains is less than    
+Mindomains). For example, if you have 3 zones with 2, 2 and 1 matching pods respectively, `maxSkew` is set to 1 then the global minimum is 1
