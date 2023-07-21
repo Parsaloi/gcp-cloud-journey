@@ -47,4 +47,38 @@ To remove the taint added by the command above, you can run:
 kubectl taint nodes node1 key1=value1:NoSchedule-
 ```
 
-You specify a tol
+You specify a *toleration* for a pod in the PodSpec. Both of the following tolerations "match" the taint created by the `kubectl taint` line above,  
+thus a pod with either toleration would be able to schedule onto `node1`  
+```YAML
+tolerations:
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoSchedule"
+```
+
+```YAML
+tolerations:
+  - key: "key1"
+    operator: "Exists"
+    effect: "NoSchedule"
+```
+
+- Pod that uses tolerations example:  
+```YAML
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  tolerations:
+  - key: "example-key"
+    operator: "Exists"
+    effect: "NoSchedule"
+```
