@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: caddy
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          preference:
+            matchExpressions:
+              - key: labelKey
+                operator: In
+                values:
+                  - labelValue
+  containers:
+    - name: caddy
+      image: docker.io/caddy
+      imagePullPolicy: IfNotPresent

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-podman
+  labels:
+    env: test
+spec:
+  containers:
+    - name: python-app
+      image: quay.io/podman/hello
+      imagePullPolicy: IfNotPresent
+  tolerations:
+    - key: "kubernetes.io/hostname"
+      operator: "Exists"
+      effect: "NoSchedule"
+
