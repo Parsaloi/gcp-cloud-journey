@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caddy-web-server
+spec:
+  selector:
+    matchLabels:
+      app2: web-store
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app2: web-store
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+              matchExpressions:
+                - key: "app2"
+                  operator: In
+                  values:
+                    - "web-store"
+              topologyKey: "kubernetes.io/hostname"
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+              matchExpressions:
+                - key: "app"
+                  operator: In
+                  values:
+                    - "store"
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: caddy
+          image: docker.io/caddy

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lighttpd
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            - key: "kubernetes.io/hostname"
+              operator: In
+              values:
+                - "multinode-demo-m03"
+  containers:
+    - name: lighttpd
+      image: quay.io/jitesoft/lighttpd
+      imagePullPolicy: IfNotPresent
