@@ -1,5 +1,5 @@
 
-# gcp-cloud-architect
+# gcp-cloud-journey
 
 This is a mini-projects series demonstrating my GCP Cloud Architect journey
 
