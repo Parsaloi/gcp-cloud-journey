@@ -11,7 +11,7 @@ Learning Kuberenets concepts from the Kubernetes docs <https://kubernetes.io/> h
 > Brendan Burns(2022) inspired me with his words "...we dig into how central collaboration is to this innovation..." on his *2022* LinkedIn post:  
 > > <<https://www.linkedin.com/pulse/community-drives-innovation-kubernetes-brendan-burns>>  
 
-## Concepts & Techniques I understand
+## Concepts & Techniques
 
 - *Core Kubernetes Concepts*
 - *Cloud-Native Architectures*
