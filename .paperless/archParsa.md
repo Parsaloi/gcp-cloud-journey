@@ -8,7 +8,7 @@
 archParsa set up the Kubernetes platform to simplify the development to production transition for the Paperless developers.
 
 The Paperless developers will transition to developing and testing prototypes in a Google Cloud environment on a Kubernetes cluster.  
-The GKE cluster (Google's Kubernetes PaaS) is comprised of one zonal cluster that is configured to host a minimum of 3 development nodes and a maximum of  
+The GKE cluster (Google Kubernetes Engine) is comprised of one zonal cluster that is configured to host a minimum of 3 development nodes and a maximum of  
 9 development nodes as well as the in built autoscaling feature for nodes enabled.
 
 ## Developer experience
