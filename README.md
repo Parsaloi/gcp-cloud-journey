@@ -1,7 +1,6 @@
 
 # my-cloud-journey
-
-This is a mini-projects series demonstrating my GCP Cloud Architect journey
+☁️
 
 ## Introduction
 
